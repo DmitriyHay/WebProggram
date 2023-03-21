@@ -1,0 +1,34 @@
+.Header{
+    background-color: #00ffe1;
+    height: 100px;
+}
+
+.Nav{
+    background-color: #ff5a54;
+    height: 30px;
+ }
+
+ .margin{
+    margin: 0;
+}
+
+ .Menu{
+    float: left;
+    height: 400px;
+    width: 20%;
+    background-color: #6dfd6d;
+}
+
+.Content{
+    float: right;
+    height: 400px;
+    width: 80%;
+    background-color: #cecece;
+}
+.Footer{
+    background-color: #0066ff;
+    height: 200px;
+    width: 100%;
+    display: inline-block;
+}
+

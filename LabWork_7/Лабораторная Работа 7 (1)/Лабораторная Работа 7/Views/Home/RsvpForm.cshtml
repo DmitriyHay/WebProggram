@@ -1,0 +1,59 @@
+﻿@model PartyInvites.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>RsvpForm</title>
+    <link rel="stylesheet" type="text/css" href="~/Content/Style.css" />
+    <link rel="stylesheet" type="text/css" href="~/Content/bootstrap.css" />
+    <style>
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        body {
+            background-color: #F1F1F1;
+        }
+    </style>
+</head>
+<body>
+    <div class="panel-success">
+        <div class="panel-heading text-center">
+            <h4>Форма RSVP</h4>
+        </div>
+        <div class="panel-body">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary()
+                <div class="form-group">
+                    <label>Ваше имя:</label>
+                    @Html.TextBoxFor(x => x.Name, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Ваш email:</label>
+                    @Html.TextBoxFor(x => x.Email, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Ваш телефон:</label>
+                    @Html.TextBoxFor(x => x.Phone, new { @class = "form-control" })
+                </div>
+                <div class="form-group">
+                    <label>Вы придете?</label>
+                    @Html.DropDownListFor(x => x.WillAttend, new[] {
+                        new SelectListItem() { Text = "Да, конечно я буду", Value = Boolean.TrueString},
+                        new SelectListItem() { Text = "Нет, я не смогу", Value = Boolean.FalseString}
+                    }, "Выберите вариант", new { @class = "form-control" })
+                </div>
+                <div class="text-center">
+                    <input type="submit" value="Отправить форму RSVP" class="btn btn-success" />
+                </div>
+            }
+        </div>
+    </div>
+</body>
+</html>
